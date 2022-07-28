@@ -13,7 +13,7 @@
 
 /*VDéclaration ariables globale*/
 
-int i= 0, j = 0, n = 0;
+int i= 0, j = 0, n = 0, numero = 1;
 
 /*Corp du programme*/
 
@@ -25,6 +25,7 @@ int main()
     double mat[max][max];
     double devoir, examen, moyenne, note = 0, cc, exam;
     char iduser[80]= {0};
+    char matiere[80]={0};
     
 
 /*Saisie par l'utilisateur : nom et nbr de matières*/
@@ -42,7 +43,10 @@ int main()
                for ( i = 0; i < n; i++)
                 {
 /*saisie, lecture et controle devoir*/
-                    printf("Donner votre note de devoir :\n");
+                    printf("L'intitulé de la matière %d:", numero++); scanf("%s", matiere);
+                    printf("\n");
+                    printf("Note Devoir  de %s :", matiere);
+                    printf("\n");
                     scanf("%lf", &devoir);
                     if ((devoir < 0) || (devoir > 20))
                     {
@@ -51,11 +55,12 @@ int main()
                     }
                     printf("\n");
 /*saisie, lecture et controle examen*/
-                    printf("Donner votre note d'examen :\n");
+                    printf("Note examen  de %s :", matiere);
+                    printf("\n");
                     scanf("%lf", &examen);
                     if ((examen < 0) || (examen > 20))
                     {
-                            printf("La note d'examen doit être compris entre à 0 et 20 :\n");
+                            printf("La note de devoir doit être compris entre à 0 et 20 :\n");
                             scanf("%lf", &examen);
                     }
                 }
